@@ -1,0 +1,256 @@
+:root {
+	/* Colors */
+	--locksmith-colors-white: white;
+	--locksmith-colors-background-base: #22262A;
+	--locksmith-colors-background-alt: #2C3136;
+	--locksmith-colors-border-base: #353B41;
+	--locksmith-colors-border-lock-item-button: #4A5158;
+
+	/* Font Family */
+	--locksmith-font-family-base: 'IBM Plex Sans', sans-serif;
+	--locksmith-font-family-title: 'Inter', sans-serif;
+
+	/* Font Sizes */
+	--locksmith-fontSizes-base: 1rem;
+	--locksmith-fontSizes-12: 0.75rem;
+	--locksmith-fontSizes-16: 1rem;
+	--locksmith-fontSizes-20: 1.25rem;
+	--locksmith-fontSizes-24: 1.5rem;
+	--locksmith-fontSizes-81: 5.0625rem;
+
+	/* Spacing */
+	--locksmith-spacing-0: 0;
+	--locksmith-spacing-1: 0.0625rem;
+	--locksmith-spacing-4: 0.25rem;
+	--locksmith-spacing-8: 0.5rem;
+	--locksmith-spacing-10: 0.625rem;
+	--locksmith-spacing-12: 0.75rem;
+	--locksmith-spacing-16: 1rem;
+	--locksmith-spacing-18: 1.125rem;
+	--locksmith-spacing-24: 1.5rem;
+	--locksmith-spacing-32: 2rem;
+
+	/* Sizing */
+	--locksmith-sizes-0: 0;
+	--locksmith-sizes-1: 0.0625rem;
+	--locksmith-sizes-4: 0.25rem;
+	--locksmith-sizes-8: 0.5rem;
+	--locksmith-sizes-10: 0.625rem;
+	--locksmith-sizes-12: 0.75rem;
+	--locksmith-sizes-16: 1rem;
+	--locksmith-sizes-18: 1.125rem;
+	--locksmith-sizes-24: 1.5rem;
+	--locksmith-sizes-32: 2rem;
+
+	/* zIndex */
+	--locksmith-zIndex-app-background: 1;
+	--locksmith-zIndex-code-generator: 2;
+
+	/* System */
+	--locksmith-colors-background-page: var(--locksmith-colors-background-base);
+	--locksmith-colors-background-button: var(--locksmith-colors-background-base);
+
+	/* Digit */
+	--locksmith-colors-border-digit-hover: var(--locksmith-colors-white);
+	--locksmith-colors-border-digit: var(--locksmith-colors-border-base);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--locksmith-colors-background-page);
+	font-family: var(--locksmith-font-family-base);
+	color: var(--locksmith-colors-white);
+	min-width: 1024px;
+}
+
+.app {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	height: 100vh; 
+	background: radial-gradient(55.41% 55.41% at 50% 44.59%, rgba(24, 103, 192, 0.36) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* Code Generate */
+
+.code-generator-container {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 50px;
+	z-index: var(--locksmith-zIndex-code-generator);
+}
+
+.code-generator-button {
+	display: flex;
+	box-sizing: border-box;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: var(--locksmith-spacing-18) var(--locksmith-spacing-24);
+	gap: var(--locksmith-spacing-24);
+	cursor: pointer;
+
+	width: 474px;
+	height: 60px;
+
+	background: linear-gradient(132.26deg, #448fea 8.76%, #448fea 42.38%, #448fea 8.76%);
+	box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	border: none;
+
+	font-family: var(--locksmith-font-family-title);
+	font-style: normal;
+	font-weight: 600;
+	font-size: var(--locksmith-fontSizes-20);
+	line-height: var(--locksmith-fontSizes-24);
+
+	color: var(--locksmith-colors-white);
+}
+
+.code-generator-button:hover {
+	border: 2px solid var(--locksmith-colors-white);
+}
+
+/* Lock */
+
+.lock {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-top: 50px;
+	gap: 60px;
+	margin-left: 25px;
+}
+
+.lock-item {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: var(--locksmith-spacing-10);
+}
+
+.lock-input-container {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: var(--locksmith-spacing-10);
+    
+}
+
+.lock-input__label {
+	font-weight: 'Inter';
+	font-size: var(--locksmith-fontSizes-12);
+}
+
+.lock-item-actions {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--locksmith-spacing-10);
+}
+
+.lock-item-button {
+	text-align: center;
+	box-sizing: border-box;
+	border-radius: 100px;
+	background: var(--locksmith-colors-background-page);
+	border: 1px solid var(--locksmith-colors-border-lock-item-button);
+	box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.05), 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
+	width: var(--locksmith-sizes-24);
+	height: var(--locksmith-sizes-24);
+	color: var(--locksmith-colors-white);
+	cursor: pointer;
+}
+
+.lock-item-button:hover {
+	border: 1px solid var(--locksmith-colors-white);
+}
+
+.lock-item-button svg {
+	width: 0.6rem;
+	height: 0.6rem;
+	pointer-events: none;
+}
+
+.lock-input {
+	box-sizing: border-box;
+	display: flex;
+	padding: 0px 5px;
+	width: 92px;
+	height: 110px;
+	background: var(--locksmith-colors-background-alt);
+	border: 1px solid var(--locksmith-colors-border-base);
+	box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+
+	text-align: center;
+	color: #ffffff;
+	font-style: normal;
+	font-weight: 700;
+	font-size: var(--locksmith-fontSizes-81);
+	line-height: 105px;
+	outline: none;
+}
+
+.lock-input:hover {
+	border: 2px solid var(--locksmith-colors-white);
+}
+
+.lock-input:focus-within {
+	border: 2px solid var(--locksmith-colors-white);
+}
+
+/* Code */
+
+.code {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0px;
+	padding-top: 50px;
+	gap: 36px;
+	cursor: default;
+}
+
+.code-item {
+	position: relative;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 5px;
+	gap: 10px;
+	width: 92px;
+	height: 110px;
+	background: var(--locksmith-colors-background-base);
+	border: 1px solid var(--locksmith-colors-border-digit);
+	box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+
+	font-style: normal;
+	font-weight: 700;
+	font-size: var(--locksmith-fontSizes-81);
+	line-height: 105px;
+}
+
+.code-item__divider  {
+	position: absolute;
+	top: var(--locksmith-spacing-12);
+	border: 1px solid var(--locksmith-colors-background-base);
+	width: 100%;
+}
