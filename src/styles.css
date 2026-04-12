@@ -1,29 +1,21 @@
 :root {
-	/* Colors */
-	--locksmith-colors-white: oklch(100.00% 0.000 0);
-	--locksmith-colors-background-base: oklch(26.62% 0.009 248.18);
-	--locksmith-colors-text-lock-input: oklch(16.376% 0.00002 271.152);
-	--locksmith-colors-background-lock-input: oklch(100.00% 0.000 0);
-	--locksmith-colors-background-code-item: oklch(16.47% 0.012 250.14 / 0.3);
-	--locksmith-colors-border-base: oklch(100.00% 0.000 0 / .30);
-	--locksmith-colors-border-lock-item-button: oklch(29.41% 0.018 250.14);
-	--locksmith-colors-background-lock-item-button-hover: oklch(35.41% 0.018 250.14);
-
 	/* Font Family */
 	--locksmith-font-family-base: 'IBM Plex Sans', sans-serif;
 	--locksmith-font-family-title: 'Inter', sans-serif;
-`
+
 	/* Font Sizes */
-	--locksmith-fontSizes-base: 1rem;
-	--locksmith-fontSizes-12: 0.75rem;
-	--locksmith-fontSizes-16: 1rem;
-	--locksmith-fontSizes-20: 1.25rem;
-	--locksmith-fontSizes-24: 1.5rem;
-	--locksmith-fontSizes-81: 5.0625rem;
+	--locksmith-font-size-base: 1rem;
+	--locksmith-font-size-12: 0.75rem;
+	--locksmith-font-size-16: 1rem;
+	--locksmith-font-size-20: 1.25rem;
+	--locksmith-font-size-24: 1.5rem;
+	--locksmith-font-size-81: 5.0625rem;
 
 	/* Spacing */
 	--locksmith-spacing-0: 0;
 	--locksmith-spacing-1: 0.0625rem;
+	--locksmith-spacing-2: 0.125rem;
+	--locksmith-spacing-3: 0.1875rem;
 	--locksmith-spacing-4: 0.25rem;
 	--locksmith-spacing-8: 0.5rem;
 	--locksmith-spacing-10: 0.625rem;
@@ -36,6 +28,8 @@
 	/* Sizing */
 	--locksmith-sizes-0: 0;
 	--locksmith-sizes-1: 0.0625rem;
+	--locksmith-sizes-2: 0.125rem;
+	--locksmith-sizes-3: 0.1875rem;
 	--locksmith-sizes-4: 0.25rem;
 	--locksmith-sizes-8: 0.5rem;
 	--locksmith-sizes-10: 0.625rem;
@@ -46,17 +40,31 @@
 	--locksmith-sizes-32: 2rem;
 	--locksmith-sizes-40: 2.5rem;
 
-	/* zIndex */
-	--locksmith-zIndex-app-background: 1;
-	--locksmith-zIndex-code-generator: 2;
+	/* Font Weight */
+	--locksmith-font-weight-regular: 400;
+	--locksmith-font-weight-medium: 500;
+	--locksmith-font-weight-semibold: 600;
+	--locksmith-font-weight-bold: 700;
 
-	/* System */
+	/* Reference Colors */
+	--locksmith-colors-white: oklch(100.00% 0.000 0);
+
+	/* Background */
+	--locksmith-colors-background-base: oklch(26.62% 0.009 248.18);
+	--locksmith-colors-background-code-item: oklch(16.47% 0.012 250.14 / 0.3);
+	--locksmith-colors-background-lock-input: oklch(100.00% 0.000 0);
+	--locksmith-colors-background-lock-item-button-hover: oklch(35.41% 0.018 250.14);
 	--locksmith-colors-background-page: var(--locksmith-colors-background-base);
-	--locksmith-colors-background-button: var(--locksmith-colors-background-base);
+	--locksmith-colors-background-lock-item-button: var(--locksmith-colors-background-base);
 
-	/* Digit */
-	--locksmith-colors-border-digit-hover: var(--locksmith-colors-white);
+	/* Border */
+	--locksmith-colors-border-base: oklch(100.00% 0.000 0 / .30);
+	--locksmith-colors-border-lock-item-button: oklch(29.41% 0.018 250.14);
 	--locksmith-colors-border-digit: var(--locksmith-colors-border-base);
+	--locksmith-colors-border-digit-hover: var(--locksmith-colors-white);
+
+	/* Text */
+	--locksmith-colors-text-lock-input: oklch(16.376% 0.00002 271.152);
 }
 
 body {
@@ -85,7 +93,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 30px;
+	gap: var(--locksmith-spacing-32);
 	z-index: var(--locksmith-zIndex-code-generator);
 	padding: var(--locksmith-spacing-16);
 }
@@ -110,9 +118,9 @@ body {
 
 	font-family: var(--locksmith-font-family-title);
 	font-style: normal;
-	font-weight: 600;
-	font-size: var(--locksmith-fontSizes-20);
-	line-height: var(--locksmith-fontSizes-24);
+	font-weight: var(--locksmith-font-weight-semibold);
+	font-size: var(--locksmith-font-size-20);
+	line-height: var(--locksmith-font-size-24);
 
 	color: var(--locksmith-colors-white);
 }
@@ -129,8 +137,8 @@ body {
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	padding-top: 50px;
-	gap: 60px;
+	padding-top: 3.125rem;
+	gap: 3.75rem;
 	margin-left: 25px;
 }
 
@@ -155,12 +163,12 @@ body {
 
 .lock-input-container input:focus-visible {
 	outline: 1px dotted var(--locksmith-colors-white);
-	outline-offset: 3px;
+	outline-offset: var(--locksmith-spacing-3);
 }
 
 .lock-input__label {
-	font-weight: 400;
-	font-size: var(--locksmith-fontSizes-14);
+	font-weight: var(--locksmith-font-weight-regular);
+	font-size: var(--locksmith-font-size-14);
 }
 
 .lock-item-actions {
@@ -176,7 +184,7 @@ body {
 	text-align: center;
 	box-sizing: border-box;
 	border-radius: 100px;
-	background: var(--locksmith-colors-background-page);
+	background: var(--locksmith-colors-background-lock-item-button);
 	border: 1px solid var(--locksmith-colors-border-lock-item-button);
 	box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.05), 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.1);
 	width: var(--locksmith-sizes-40);
@@ -192,7 +200,7 @@ body {
 
 .lock-item-button:focus-visible {
 	outline: 1px solid var(--locksmith-colors-white);
-	outline-offset: 1px;
+	outline-offset: var(--locksmith-spacing-1);
 }
 
 .lock-item-button svg {
@@ -216,8 +224,8 @@ body {
 	text-align: center;
 	color: var(--locksmith-colors-text-lock-input);
 	font-style: normal;
-	font-weight: 700;
-	font-size: var(--locksmith-fontSizes-81);
+	font-weight: var(--locksmith-font-weight-bold);
+	font-size: var(--locksmith-font-size-81);
 	line-height: 105px;
 	outline: none;
 }
@@ -262,8 +270,8 @@ body {
 	border-radius: 8px;
 
 	font-style: normal;
-	font-weight: 700;
-	font-size: var(--locksmith-fontSizes-81);
+	font-weight: var(--locksmith-font-weight-bold);
+	font-size: var(--locksmith-font-size-81);
 	line-height: 105px;
 }
 
