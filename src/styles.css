@@ -5,14 +5,14 @@
 	--locksmith-colors-text-lock-input: oklch(16.376% 0.00002 271.152);
 	--locksmith-colors-background-lock-input: oklch(100.00% 0.000 0);
 	--locksmith-colors-background-code-item: oklch(16.47% 0.012 250.14 / 0.3);
-	--locksmith-colors-border-base: oklch(18.82% 0.014 250.14);
+	--locksmith-colors-border-base: oklch(100.00% 0.000 0 / .30);
 	--locksmith-colors-border-lock-item-button: oklch(29.41% 0.018 250.14);
 	--locksmith-colors-background-lock-item-button-hover: oklch(35.41% 0.018 250.14);
 
 	/* Font Family */
 	--locksmith-font-family-base: 'IBM Plex Sans', sans-serif;
 	--locksmith-font-family-title: 'Inter', sans-serif;
-
+`
 	/* Font Sizes */
 	--locksmith-fontSizes-base: 1rem;
 	--locksmith-fontSizes-12: 0.75rem;
