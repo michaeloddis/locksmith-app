@@ -1,6 +1,6 @@
 export const LOCK_TITLE = {
-  MIN_DIGIT: 'Min. digit',
-  MAX_DIGIT: 'Max. digit',
+  MIN_DIGIT: 'Min digit',
+  MAX_DIGIT: 'Max digit',
   CODE_LENGTH: 'Code length',
 }
 

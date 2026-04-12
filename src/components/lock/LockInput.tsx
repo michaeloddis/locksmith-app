@@ -93,13 +93,15 @@ export function LockInput ({
 
   return (
     <LockInputContainer>
-      <label
+      <label 
+        htmlFor={`lock-input__input-${elementId}`}
         id={`lock-input__label-${elementId}`}
         className='lock-input__label'>
         {label}
       </label>
       <LockItem>
         <input
+          id={`lock-input__input-${elementId}`}
           aria-labelledby={`lock-input__label-${elementId}`}
           type='text'
           ref={inputElement}

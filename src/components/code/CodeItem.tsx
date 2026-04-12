@@ -12,6 +12,7 @@ export function CodeItem({
 }: ICodeItem) {
   const [lockValue, setLockValue] = useState(value);
 
+  /** Animates the lock value from 0 to the specified value */
   useEffect(() => {
     const controls = animate(0, value, {
       duration: 1,
